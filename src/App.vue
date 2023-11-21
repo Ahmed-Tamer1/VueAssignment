@@ -1,26 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <p id="logo">LOGO</p>
+  <NavBar msg="Welcome to Your Vue.js App" />
+  <SideBar />
+  <ProductCardContainer />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//import HelloWorld from './components/HelloWorld.vue'
+import NavBar from "./components/NavBar.vue";
+import SideBar from "./components/Sidebar.vue";
+import ProductCardContainer from "./components/ProductCardContainer.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    NavBar,
+    SideBar,
+    ProductCardContainer,
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+#logo {
+  font-family: "Lato", sans-serif;
+  font-size: 3vh;
+  font-weight: 700;
+  margin-left: 1vh;
+  margin-top: 1vh;
 }
 </style>
