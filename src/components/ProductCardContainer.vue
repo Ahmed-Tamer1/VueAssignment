@@ -105,6 +105,11 @@ export default {
               this.customProductState &&
               !this.eyelinerState &&
               !this.perfumeState
+            ) &&
+            !(
+              !this.customProductState &&
+              !this.eyelinerState &&
+              this.perfumeState
             )
           ) {
             this.data.push(element);
@@ -115,8 +120,9 @@ export default {
         if (perfumeVal && !done) {
           const productTitle = element.title;
           if (
-            productTitle.toLowerCase().includes("parfum") ||
-            productTitle.toLowerCase().includes("toilette")
+            (productTitle.toLowerCase().includes("parfum") ||
+              productTitle.toLowerCase().includes("toilette")) &&
+            !(!this.chanelState && this.inglotState)
           ) {
             this.data.push(element);
             done = true;
